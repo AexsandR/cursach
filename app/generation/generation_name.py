@@ -28,7 +28,7 @@ class Generation_people:
                 print(human)
                 fio = f'{human["LastName"]} {human["FirstName"]} {human["FatherName"]}'
                 email = human["Email"]
-                cur.execute("CALL online_shop.addClient(%s, %s)", (fio, email))                
+                cur.execute("call online_shop.addClient(%s, %s)", (fio, email))                
             if count_client != 0:
                 time.sleep(1)
         self.__conn.commit()
