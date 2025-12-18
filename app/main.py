@@ -1,8 +1,8 @@
 import mysql.connector
 
 conn = mysql.connector.connect(
-    host="100.117.159.15",
-    user="bd",
-    password="43400583_Ksu!"
+    host="",
+    user="",
+    password=""
 )
 print(conn.is_connected())
