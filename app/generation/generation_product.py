@@ -46,3 +46,12 @@ class Generation_product:
                 cur.execute("call online_shop.addReview(%s, %s, %s, %s)", (i, j, review["text"], review["rating"]))
         self.__conn.commit()
         cur.close()
+    
+    def generate_cart(self, count_clients: int, count_product: int) -> None:
+        cur = self.__conn.cursor()
+        for id_client in range(1, count_clients + 1):
+            for article in random.sample(list(range(1, count_product + 1)), random.randint(1, count_product)):
+                print(id_client, article)
+                cur.execute("call online_shop.addCart(%s, %s, %s)", (id_client, article, random.randint(1, 10)))
+        self.__conn.commit()
+        cur.close()

@@ -19,8 +19,11 @@ conn = mysql.connector.connect(
 print(conn.is_connected())
 
 # generation_people = Generation_people(conn)
+# generation_people.generation_clients(400)
 gp = Generation_product(conn)
+gp.generate_cart(1000, 6)
 # gp.add_product(smartphones)
-gp.generate_review(reviews, 22, 6)
+# gp.generate_review(reviews, 1225, 6)
+
 # generation_people.generation_clients(20)
 
